@@ -121,6 +121,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Guard.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
@@ -128,6 +129,10 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Guard.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Board.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

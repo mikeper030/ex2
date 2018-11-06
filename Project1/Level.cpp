@@ -2,11 +2,14 @@
 
 
 
-Level::Level()
+
+
+/*Level::Level(int x)
 {
+	
 }
 
 
 Level::~Level()
 {
-}
+}*/

@@ -3,8 +3,10 @@
 class Level
 {
 public:
-	Level();
 	Level(int);
+
+
+	~Level();
 private:
 	Board& m_board;
 	int m_curr_guards;
