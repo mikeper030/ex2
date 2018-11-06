@@ -2,6 +2,7 @@
 #include <string.h>
 #include <vector>
 #include <fstream>
+#include "Player.h"
 
 
 using std::string;
@@ -14,11 +15,18 @@ using std::vector;
 
 class Board
 {
-public:
+	friend class Vertex;
+	friend class Player;
 
+public:
+	
 	Board(const string);
 	void init(std::fstream & file);
 	vector<string>& getVector();
+	char getObject(int i,int j);
+	void setLocation(int i,int j, string s);
+	void exclamationMark();
+
 
 
 	~Board();
@@ -27,5 +35,6 @@ private:
 	string m_input;
 	int m_size, m_step;
 	vector<string> m_board;
+	Player act;
 };
 

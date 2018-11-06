@@ -44,6 +44,21 @@ vector<string>& Board::getVector()
 	return m_board;
 }
 
+char Board::getObject()
+{
+}
+
+void Board::setLocation( int i, int j,string s)
+{
+	
+
+}
+
+void Board::exclamationMark()
+{
+	act.move(m_board);
+}
+
 Board::~Board()
 {
 }
