@@ -73,33 +73,33 @@ void Player::move(vector<string>& board)
 bool Player::moveRight(vector<string> &board)
 {
 	
-	if(board[get_x()][get_y()] == '@' || board[i+1][j]=='#')
+	if(board[i+1][j] == '@' || board[i+1][j]=='#')
 		return false;
 	else
 	{
-		b.setLocation();
+		setLocation(i+1,j);
 		return true;
 	}
 }
-
+ 
 bool Player::moveLeft(vector<string> &board)
 {
-	if (b.m_board[i -1][j] == '@' || b.m_board[i - 1][j] == '#')
+	if (board[i -1][j] == '@' || board[i - 1][j] == '#')
 		return false;
 	else
 	{
-		b.setLocation();
+		setLocation(i-1,j);
 		return true;
 	}
 }
 
 bool Player::moveUp(vector<string> &board)
 {
-	if (b.m_board[i][j-1] == '@' || b.m_board[i][j-1] == '#')
+	if (board[i][j-1] == '@' || board[i][j-1] == '#')
 		return false;
 	else
 	{
-		b.setLocation();
+		setLocation(i,j-1);
 		return true;
 	}
 }
@@ -107,18 +107,42 @@ bool Player::moveUp(vector<string> &board)
 
 bool Player::moveDown(vector<string> &board)
 {
-	if (b.m_board[i][j+1] == '@' || b.m_board[i][j+1] == '#')
+	if (board[i][j+1] == '@' || board[i][j+1] == '#')
 		return false;
 	else
 	{
-		b.setLocation();
+		setLocation(i,j+1);
 		return true;
 	}
+}
+
+void Player::trowBomb()
+{
 }
 
 bool Player::isVaildLocation()
 {
 	return false;
+}
+
+void Player::setLocation(int k, int l)
+{
+	if (m_location[i + 1] == k && m_location[j] == l)
+	{
+		//chenge to right
+	}
+	if (m_location[i - 1] == k && m_location[j] == l)
+	{
+		//chenge to left
+	}
+	if (m_location[i] == k && m_location[j-1] == l)
+	{
+		//chenge to up
+	}
+	if (m_location[i] == k && m_location[j+1] == l)
+	{
+		//chenge to down
+	}
 }
 
 

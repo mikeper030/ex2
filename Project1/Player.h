@@ -4,6 +4,7 @@
 static int i, j;
 class Player
 {
+	friend class vertex;
 
 
 public:
@@ -11,18 +12,20 @@ public:
 	void dropLife();
 	void extraLife();
 	void move(vector<string> &);
-	bool moveRight(vector<string> &board);
-	bool moveLeft(vector<string> &board);
-	bool moveUp(vector<string> &board);
-	bool moveDown(vector<string> &board);
+	bool moveRight(vector<string> &);
+	bool moveLeft(vector<string> &);
+	bool moveUp(vector<string> &);
+	bool moveDown(vector<string> &);
+	void trowBomb();
 	bool isVaildLocation();
+	void setLocation(int i, int j);
 
 	
 	~Player();
 
 private:
 	static int m_currLife ;
-	vector<int> m_location ;
+	vector<int> m_location{i,j};
 
 
 };

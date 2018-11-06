@@ -19,12 +19,16 @@ class Board
 	friend class Player;
 
 public:
-	
+	//get the name of file
 	Board(const string);
+	//insert file to vector of string
 	void init(std::fstream & file);
+	//
 	vector<string>& getVector();
+	//get object by send index of vector
 	char getObject(int i,int j);
-	void setLocation(int i,int j, string s);
+
+	
 	void exclamationMark();
 
 
@@ -34,7 +38,10 @@ private:
 	// String for input
 	string m_input;
 	int m_size, m_step;
+	//the board
 	vector<string> m_board;
-	Player act;
+	//object of Player for get bboard in Player
+	//need to check if is right to do like this
+	Player robot;						//need to fix
 };
 

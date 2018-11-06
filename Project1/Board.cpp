@@ -46,17 +46,13 @@ vector<string>& Board::getVector()
 
 char Board::getObject()
 {
+	return m_board[i][j];
 }
 
-void Board::setLocation( int i, int j,string s)
-{
-	
-
-}
 
 void Board::exclamationMark()
 {
-	act.move(m_board);
+	robot.move(m_board);
 }
 
 Board::~Board()
