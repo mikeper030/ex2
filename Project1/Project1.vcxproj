@@ -117,9 +117,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Controller.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Guard.h" />
+    <ClInclude Include="Level.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Guard.cpp" />
+    <ClCompile Include="Level.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
