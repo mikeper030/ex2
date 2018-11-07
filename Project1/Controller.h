@@ -1,9 +1,14 @@
 #pragma once
 #include"Game.h"
+#include "Board.h"
 class Controller
 {
 public:
-	void startGame(Game&);
-	void endGame(Game&);
+	Controller(string &);
+	void updateScreen(Board & );
+	void clearAndPrint(Board &);
+
+
+
 };
 

@@ -31,7 +31,7 @@ void Player::extraLife()
 {
 }
 
-void Player::move(vector<string>& board)
+void Player::move(vector<string> & board)
 {
 	std::system("cls");
 	int c = 0;
@@ -67,36 +67,30 @@ void Player::move(vector<string>& board)
 			std::cout << "Unknown special key pressed (code = " << c << ")" << std::endl;
 			break;
 		}
-	}
+	} while (c != KB_ESCAPE);
 }
 
 bool Player::moveRight(vector<string> &board)
 {
 	
-	if(board[i+1][j] == '@' || board[i+1][j]=='#')
+	if (board[i][j+1] == '@' || board[i][j+1] == '#')
+	{
+		cout << "colision" << endl;
 		return false;
+	}
 	else
 	{
-		setLocation(i+1,j);
+		setLocation(i,j+1);
 		return true;
 	}
 }
  
 bool Player::moveLeft(vector<string> &board)
 {
-	if (board[i -1][j] == '@' || board[i - 1][j] == '#')
+	if (board[i][j-1] == '@' || board[i][j-1] == '#') {
+		cout << "colision" << endl;
 		return false;
-	else
-	{
-		setLocation(i-1,j);
-		return true;
 	}
-}
-
-bool Player::moveUp(vector<string> &board)
-{
-	if (board[i][j-1] == '@' || board[i][j-1] == '#')
-		return false;
 	else
 	{
 		setLocation(i,j-1);
@@ -104,14 +98,29 @@ bool Player::moveUp(vector<string> &board)
 	}
 }
 
+bool Player::moveUp(vector<string> &board)
+{
+	if (board[i-1][j] == '@' || board[i-1][j] == '#') {
+		cout << "colision" << endl;
+		return false;
+	}
+	else
+	{
+		setLocation(i-1,j);
+		return true;
+	}
+}
+
 
 bool Player::moveDown(vector<string> &board)
 {
-	if (board[i][j+1] == '@' || board[i][j+1] == '#')
+	if (board[i+1][j] == '@' || board[i+1][j] == '#') {
+		cout << "colision" << endl;
 		return false;
+	}
 	else
 	{
-		setLocation(i,j+1);
+		setLocation(i+1,j);
 		return true;
 	}
 }
@@ -123,26 +132,6 @@ void Player::trowBomb()
 bool Player::isVaildLocation()
 {
 	return false;
-}
-
-void Player::setLocation(int k, int l)
-{
-	if (m_location[i + 1] == k && m_location[j] == l)
-	{
-		//chenge to right
-	}
-	if (m_location[i - 1] == k && m_location[j] == l)
-	{
-		//chenge to left
-	}
-	if (m_location[i] == k && m_location[j-1] == l)
-	{
-		//chenge to up
-	}
-	if (m_location[i] == k && m_location[j+1] == l)
-	{
-		//chenge to down
-	}
 }
 
 

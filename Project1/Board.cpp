@@ -4,6 +4,7 @@
 #include <vector>
 #include <istream>
 #include <sstream>
+#include <Windows.h>
 
 
 using std::string;
@@ -38,23 +39,86 @@ void Board::init(fstream & file)
 	}
 	cout << m_board[0];
 }
+//====================================================
+//
+//====================================================
+void Board::print(Board b) const
+{
+	for (int i = 0; i < b.m_board.size(); i++)
+	{
+		cout << b.m_board[i] << endl;
+	}
+}
+//====================================================
+//
+//====================================================
+void Board::clear()
+{
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { 0, 0 });
+}
+//====================================================
+//
+//====================================================
 //function return the board by vector
 vector<string>& Board::getVector()
 {
 	return m_board;
 }
-
-char Board::getObject()
+//====================================================
+//
+//====================================================
+//need to fix
+void Board::setLocation(int k, int l)
 {
-	return m_board[i][j];
+	if (i == k && j == l+1)
+	{
+		//chenge to right
+		swapX(j,l);
+	}
+	if (i - 1 == k && j == l)
+	{
+		//chenge to left
+		swapX(i, k);
+	}
+	if (i == k && j - 1 == l)
+	{
+		//chenge to up
+		swapY(j, l);
+	}
+	if (i == k && j + 1 == l)
+	{
+		//chenge to down
+		swapY(j, l);
+	}
 }
-
-
-void Board::exclamationMark()
+//====================================================
+//
+//====================================================
+void Board::swapX(int i, int k)
 {
-	robot.move(m_board);
+	char temp = m_board[i][j];
+	m_board[i][j] = m_board[k][j];
+	m_board[k][j] = temp;
+	i = k;
 }
-
+//====================================================
+//
+//====================================================
+void Board::swapY(int j, int l)
+{
+	char temp = m_board[i][j];
+	m_board[i][j] = m_board[i][l];
+	m_board[i][j] = temp;
+	i = k;
+}
+//====================================================
+//
+//====================================================
+/*void Board::exclamationMark()
+{
+	robot.move((*this));
+}
+*/
 Board::~Board()
 {
 }

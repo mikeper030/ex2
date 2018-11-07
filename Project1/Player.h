@@ -1,7 +1,9 @@
 #pragma once
 #include "Board.h"
 #include "Vertex.h"
-static int i, j;
+#include "Controller.h"
+
+
 class Player
 {
 	friend class vertex;
@@ -25,7 +27,8 @@ public:
 
 private:
 	static int m_currLife ;
-	vector<int> m_location{i,j};
+	Vertex m_position;
+	//vector<int> m_location{i,j};
 
 
 };
