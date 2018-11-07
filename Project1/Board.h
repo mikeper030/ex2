@@ -1,8 +1,11 @@
+#pragma once
+
 #include <iostream>
 #include <string.h>
 #include <vector>
 #include <fstream>
 #include "Player.h"
+#include "Vertex.h"
 
 
 using std::string;
@@ -10,14 +13,14 @@ using std::istringstream;
 using std::cout;
 using std::endl;
 using std::vector;
+//using namespace std;
 
-static int i = 1, j = 1;
+
+
 
 
 class Board
 {
-
-	friend class Vertex;
 	friend class Controller;
 
 public:
@@ -40,17 +43,16 @@ public:
 	void swapY(int j, int l);
 	//void update(const char, Vertex position)
 	
-	void exclamationMark();
-
-
 
 	~Board();
 private:
+	//static Vertex v;
 	// String for input
 	string m_input;
 	int m_size, m_step;
 	//the board
 	vector<string> m_board;
+
 	//object of Player for get bboard in Player
 	//need to check if is right to do like this
 	//Player robot;						//need to fix

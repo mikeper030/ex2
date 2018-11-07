@@ -1,14 +1,21 @@
 #pragma once
-#include"Game.h"
+#include <iostream>
+#include <stdlib.h>
+#include <string>
+#include "Game.h"
 #include "Board.h"
+
+static Vertex v;
+
+
 class Controller
 {
 public:
-	Controller(string &);
-	void updateScreen(Board & );
+	Controller(std::string);
+	void updateScreen(Board &);
 	void clearAndPrint(Board &);
-
-
+	~Controller();
+private:
 
 };
 

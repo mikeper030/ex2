@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 class Game
 {
 public:
@@ -6,3 +6,4 @@ public:
 	~Game();
 };
 
+*/

@@ -2,6 +2,7 @@
 
 
 
+/*
 Vertex::Vertex()
 {
 }
@@ -35,3 +36,4 @@ int Vertex::set_y()
 Vertex::~Vertex()
 {
 }
+*/

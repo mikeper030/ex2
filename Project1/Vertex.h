@@ -1,8 +1,8 @@
 #pragma once
-#include "Board.h"
 
 struct Vertex
 {
-	int i=1, j=1;
+	int m_i,
+		m_j;
 
 };

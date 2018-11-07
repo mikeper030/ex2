@@ -5,21 +5,16 @@
 //#include "Board.h"
 #include "Controller.h"
 
+using namespace std;
 
-
-/*	Board b("Board.txt");
-	system("pause");
-
-	return(0);
-}*/
-Controller::Controller(string & nameFile)
+Controller::Controller(string  nameFile)
 {
 	Board board(nameFile);
 	Player player;
-
+	v.m_i = v.m_j = 1;
 	do {
 		player.move(board.m_board);
-		//updateScreen(board);
+		updateScreen(board);
 		clearAndPrint(board);
 	} while (1);
 
@@ -36,3 +31,8 @@ void Controller::clearAndPrint(Board & b)
 	b.clear();
 	b.print(b);
 }
+
+Controller::~Controller()
+{
+}
+

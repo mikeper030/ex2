@@ -16,6 +16,7 @@ using std::vector;
 using namespace std;
 
 
+
 Board::Board(const string fileName)
 {
 	fstream in;
@@ -37,7 +38,7 @@ void Board::init(fstream & file)
 	{
 		cout << m_board[i] << endl;
 	}
-	cout << m_board[0];
+	cout << m_board[0]<<endl;
 }
 //====================================================
 //
@@ -70,25 +71,25 @@ vector<string>& Board::getVector()
 //need to fix
 void Board::setLocation(int k, int l)
 {
-	if (i == k && j == l+1)
+	if (v.m_i == k && v.m_j == l+1)
 	{
 		//chenge to right
-		swapX(j,l);
+		swapX(v.m_j,l);
 	}
-	if (i - 1 == k && j == l)
+	if (v.m_i - 1 == k && v.m_j == l)
 	{
 		//chenge to left
-		swapX(i, k);
+		swapX(v.m_i, k);
 	}
-	if (i == k && j - 1 == l)
+	if (v.m_i == k && v.m_j - 1 == l)
 	{
 		//chenge to up
-		swapY(j, l);
+		swapY(v.m_j, l);
 	}
-	if (i == k && j + 1 == l)
+	if (v.m_i == k && v.m_j + 1 == l)
 	{
 		//chenge to down
-		swapY(j, l);
+		swapY(v.m_j, l);
 	}
 }
 //====================================================
@@ -96,20 +97,20 @@ void Board::setLocation(int k, int l)
 //====================================================
 void Board::swapX(int i, int k)
 {
-	char temp = m_board[i][j];
-	m_board[i][j] = m_board[k][j];
-	m_board[k][j] = temp;
-	i = k;
+	char temp = m_board[v.m_i][v.m_j];
+	m_board[v.m_i][v.m_j] = m_board[k][v.m_j];
+	m_board[k][v.m_j] = temp;
+	v.m_i = k;
 }
 //====================================================
 //
 //====================================================
 void Board::swapY(int j, int l)
 {
-	char temp = m_board[i][j];
-	m_board[i][j] = m_board[i][l];
-	m_board[i][j] = temp;
-	i = k;
+	char temp = m_board[v.m_i][v.m_j];
+	m_board[v.m_i][v.m_j] = m_board[v.m_i][l];
+	m_board[v.m_i][l] = temp;
+	v.m_i = l;
 }
 //====================================================
 //

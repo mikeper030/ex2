@@ -1,6 +1,5 @@
 #include "Player.h"
 #include <iostream>
-#include <cstdlib>      // for system()
 #include <thread>       // for sleep
 #include <conio.h>      // for _kbhit() and _getch()
 
@@ -18,8 +17,7 @@ const int KB_RIGHT = 77;
 
 Player::Player()
 {
-
-
+	
 }
 
 void Player::dropLife()
@@ -73,40 +71,40 @@ void Player::move(vector<string> & board)
 bool Player::moveRight(vector<string> &board)
 {
 	
-	if (board[i][j+1] == '@' || board[i][j+1] == '#')
+	if (board[v.m_i][v.m_j+1] == '@' || board[v.m_i][v.m_j+1] == '#')
 	{
 		cout << "colision" << endl;
 		return false;
 	}
 	else
 	{
-		setLocation(i,j+1);
+		setLocation(v.m_i , v.m_j+1);
 		return true;
 	}
 }
  
 bool Player::moveLeft(vector<string> &board)
 {
-	if (board[i][j-1] == '@' || board[i][j-1] == '#') {
+	if (board[v.m_i][v.m_j-1] == '@' || board[v.m_i][v.m_j-1] == '#') {
 		cout << "colision" << endl;
 		return false;
 	}
 	else
 	{
-		setLocation(i,j-1);
+		setLocation(v.m_i,v.m_j-1);
 		return true;
 	}
 }
 
 bool Player::moveUp(vector<string> &board)
 {
-	if (board[i-1][j] == '@' || board[i-1][j] == '#') {
+	if (board[v.m_i-1][v.m_j] == '@' || board[v.m_i-1][v.m_j] == '#') {
 		cout << "colision" << endl;
 		return false;
 	}
 	else
 	{
-		setLocation(i-1,j);
+		setLocation(v.m_i-1 , v.m_j);
 		return true;
 	}
 }
@@ -114,13 +112,13 @@ bool Player::moveUp(vector<string> &board)
 
 bool Player::moveDown(vector<string> &board)
 {
-	if (board[i+1][j] == '@' || board[i+1][j] == '#') {
+	if (board[v.m_i+1][v.m_j] == '@' || board[v.m_i+1][v.m_j] == '#') {
 		cout << "colision" << endl;
 		return false;
 	}
 	else
 	{
-		setLocation(i+1,j);
+		setLocation(v.m_i+1 , v.m_j);
 		return true;
 	}
 }
